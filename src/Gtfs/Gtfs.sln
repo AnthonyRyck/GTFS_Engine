@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GtfsEngine", "GtfsEngine\GtfsEngine.csproj", "{638006E9-B133-4DDE-BF94-6E07B771BC2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GtfsEngine.Test", "GtfsEngine.Test\GtfsEngine.Test.csproj", "{A3684B2E-7110-48B4-B5A5-416CF5DFC74E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{638006E9-B133-4DDE-BF94-6E07B771BC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{638006E9-B133-4DDE-BF94-6E07B771BC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{638006E9-B133-4DDE-BF94-6E07B771BC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{638006E9-B133-4DDE-BF94-6E07B771BC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3684B2E-7110-48B4-B5A5-416CF5DFC74E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3684B2E-7110-48B4-B5A5-416CF5DFC74E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3684B2E-7110-48B4-B5A5-416CF5DFC74E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3684B2E-7110-48B4-B5A5-416CF5DFC74E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2645EAE-3002-47B4-83B5-B7655E37A584}
+	EndGlobalSection
+EndGlobal
