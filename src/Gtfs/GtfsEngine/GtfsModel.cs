@@ -76,8 +76,6 @@ namespace GtfsEngine
 			Calendars = new Dictionary<string, Calendar>();
 			AllCalendarDates = new Dictionary<string, CalendarDates>();
 			AllShapes = new Dictionary<string, List<Shapes>>();
-
-
 			StopTimesByTripsId = new Dictionary<string, List<StopTimes>>();
 		}
 

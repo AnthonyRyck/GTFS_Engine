@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageTags>GTFS</PackageTags>
+    <RepositoryUrl>https://github.com/AnthonyRyck/GTFS_Engine</RepositoryUrl>
+    <Copyright>Copyright © Anthony Ryck 2021</Copyright>
+    <Authors>Anthony Ryck</Authors>
+    <Company>Anthony Ryck</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/AnthonyRyck/GTFS_Engine</PackageProjectUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
 	<ItemGroup>
