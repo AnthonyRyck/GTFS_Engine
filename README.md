@@ -1,4 +1,7 @@
 # GTFS Engine
+[![NuGet](https://img.shields.io/nuget/vpre/GtfsEngine.svg)](https://www.nuget.org/packages/GtfsEngine)
+[![Downloads](https://img.shields.io/nuget/dt/GtfsEngine.svg)](https://www.nuget.org/packages/GtfsEngine)
+
 
 ## Français ##  
 La General Transit Feed Specification ([GTFS](https://developers.google.com/transit/gtfs/reference?hl=fr)) est une spécification de données qui permet aux agences de transport en commun de publier leurs données de transport dans un format pouvant être utilisé par une grande variété d'applications logicielles. Aujourd'hui, le format de données GTFS est utilisé par des milliers de fournisseurs de transports publics.  
