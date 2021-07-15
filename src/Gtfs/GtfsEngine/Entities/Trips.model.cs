@@ -24,6 +24,13 @@ namespace GtfsEngine.Entities
 
 
 		/// <summary>
+		/// Retourne la liste des Shapes pour ce voyage.
+		/// </summary>
+		public IEnumerable<Shapes> ShapesCollection { get { return GetFkShapes.Invoke(this.shape_id); } }
+		public Func<string, IEnumerable<Shapes>> GetFkShapes { get; set; }
+
+
+		/// <summary>
 		/// Retourne le premier horaire de début de ce voyage.
 		/// </summary>
 		/// <returns></returns>

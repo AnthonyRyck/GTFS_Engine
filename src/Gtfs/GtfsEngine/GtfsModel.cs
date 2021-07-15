@@ -166,6 +166,7 @@ namespace GtfsEngine
 			{
 				item.GetFkRoutes = GetRoute;
 				item.GetStopTimes = GetStopTimesByTripId;
+				item.GetFkShapes = GetShapes;
 				AllTrips.Add(item.trip_id, item);
 			}
 		}
