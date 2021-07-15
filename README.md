@@ -8,7 +8,7 @@ La General Transit Feed Specification ([GTFS](https://developers.google.com/tran
 
 ### Utilisation
 Avec un fichier zip qui contient tous les fichiers `txt`, la librairie permet de charger tout en mémoire avec les relations comme indiquées :  
-<p align="center"><kbd><img src="https://i.ibb.co/cL0BC4X/GTFSdb.png" height="450"></kbd></p>
+<p align="center"><kbd><img src="https://i.ibb.co/nr2tCBB/Quick-DBD-GTFS-model.png" height="450"></kbd></p>
 
 ### Chargement  
 Fichier zip :
