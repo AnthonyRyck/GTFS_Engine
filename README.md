@@ -39,7 +39,7 @@ The General Transit Feed Specification ([GTFS](https://developers.google.com/tra
 
 ## Usage
 With a zip file that contains all the 'txt' files, the library allows you to load everything in memory with the relationships as indicated :
-<p align="center"><kbd><img src="https://i.ibb.co/cL0BC4X/GTFSdb.png" height="450"></kbd></p>
+<p align="center"><kbd><img src="https://i.ibb.co/nr2tCBB/Quick-DBD-GTFS-model.png" height="450"></kbd></p>
 
 ### Loading
 Zip file :
