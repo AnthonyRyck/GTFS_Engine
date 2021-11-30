@@ -15,6 +15,11 @@ namespace GtfsEngine.TestTools.Tools
 			return File.OpenRead(path);
 		}
 
+		public static Stream GetZipFileRennes()
+		{
+			string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "FilesTest", "Rennes.zip");
+			return File.OpenRead(path);
+		}
 
 		public static List<Stream> GetAllZipFiles()
 		{

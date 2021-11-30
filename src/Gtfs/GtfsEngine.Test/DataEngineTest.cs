@@ -3,6 +3,7 @@ using GtfsEngine.TestTools.Tools;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Xunit;
 
 namespace GtfsEngine.Test
@@ -111,6 +112,44 @@ namespace GtfsEngine.Test
 			#region Assert
 
 			Assert.Equal(45, dataEngine.Gtfs.AllRoutes.Count);
+
+			#endregion
+		}
+
+
+		[Fact]
+		public void CountUniqueFromKey_Transfer()
+		{
+			Stream rennesStream = FileManager.GetZipFileRennes();
+
+			DataEngine dataEngine = new DataEngine();
+			dataEngine.LoadDatasByZip(rennesStream);
+
+			Assert.Equal(1432, dataEngine.Gtfs.AllTransfers.Count);
+		}
+
+
+        [Fact]
+        public void CountStopReturn_FromKey_InTransfer()
+        {
+            #region Arrange
+
+			Stream rennes = FileManager.GetZipFileRennes();
+
+			#endregion
+
+			#region Act
+
+			DataEngine dataEngine = new DataEngine();
+			dataEngine.LoadDatasByZip(rennes);
+
+			IEnumerable<Stops> result = dataEngine.Gtfs.GetStopsInTransfer("1021");
+
+			#endregion
+
+			#region Assert
+
+			Assert.Equal(7, result.Count());
 
 			#endregion
 		}

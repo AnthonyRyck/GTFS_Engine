@@ -46,18 +46,23 @@ namespace GtfsEngine
 		public Dictionary<string, Calendar> Calendars { get; private set; }
 
 		/// <summary>
-		/// Exceptions pour les services définis dans le fichier calendar.txt. 
-		/// Si calendar.txt est omis, le fichier calendar_dates.txt est alors obligatoire 
-		/// et doit contenir toutes les dates du service.
+		/// Donne les correspondances entre plusieurs points d'arrêt
 		/// </summary>
-		public Dictionary<string, CalendarDates> AllCalendarDates { get; private set; }
+		public Dictionary<string, Dictionary<string, Transfer>> AllTransfers { get; set; }
+		
+        /// <summary>
+        /// Exceptions pour les services définis dans le fichier calendar.txt. 
+        /// Si calendar.txt est omis, le fichier calendar_dates.txt est alors obligatoire 
+        /// et doit contenir toutes les dates du service.
+        /// </summary>
+        public Dictionary<string, CalendarDates> AllCalendarDates { get; private set; }
 
 		/// <summary>
 		/// Règles cartographiques du parcours des véhicules (parfois appelées alignements d'itinéraire).
 		/// </summary>
 		public Dictionary<string, List<Shapes>> AllShapes { get; private set; }
 
-
+        
 
 		public Dictionary<string, List<StopTimes>> StopTimesByTripsId { get; private set; }
 
@@ -77,6 +82,7 @@ namespace GtfsEngine
 			AllCalendarDates = new Dictionary<string, CalendarDates>();
 			AllShapes = new Dictionary<string, List<Shapes>>();
 			StopTimesByTripsId = new Dictionary<string, List<StopTimes>>();
+			AllTransfers = new Dictionary<string, Dictionary<string, Transfer>>();
 		}
 
 		#endregion
@@ -134,6 +140,27 @@ namespace GtfsEngine
 		public IEnumerable<StopTimes> GetStopTimesByTripId(string keyTripId)
 		{
 			return StopTimesByTripsId[keyTripId];
+		}
+
+		/// <summary>
+		/// Retourne les "Stops" des arrêts "TO" par rapport à l'ID Stop du "FROM"
+		/// </summary>
+		/// <param name="keyStopIdFrom"></param>
+		public IEnumerable<Stops> GetStopsInTransfer(string keyStopIdFrom)
+        {
+			var temp = AllTransfers[keyStopIdFrom];
+			return temp.Values.Select(x => x.ToStopsFk).ToList();
+        }
+
+		/// <summary>
+		/// Retourne les ID des arrêts "TO" par rapport à l'ID Stop du "FROM"
+		/// </summary>
+		/// <param name="keyStopIdFrom"></param>
+		/// <returns></returns>
+		public IEnumerable<string> GetIdStopsToInTransfer(string keyStopIdFrom)
+		{
+			var temp = AllTransfers[keyStopIdFrom];
+			return temp.Keys.ToList();
 		}
 
 		#endregion
@@ -233,6 +260,34 @@ namespace GtfsEngine
 				}
 			}
 		}
+
+		internal void SetTransfer(List<Transfer> transfers)
+        {
+            foreach (var tranfer in transfers)
+			{
+				// Faire le lien avec "Stops"
+				tranfer.GetFromFkStops = GetStop;
+				tranfer.GetToFkStops = GetStop;
+
+				// Construire le Dictionary
+				if(AllTransfers.ContainsKey(tranfer.from_stop_id))
+				{
+					// Lever une exception, car pas possible.
+					if(AllTransfers[tranfer.from_stop_id].ContainsKey(tranfer.to_stop_id))
+					{
+						throw new InvalidOperationException("Le FROM et TO en clé est déjà présent");
+					}
+					else{
+						AllTransfers[tranfer.from_stop_id].Add(tranfer.to_stop_id, tranfer);
+					}
+				}
+				else
+				{
+					var temp = new Dictionary<string, Transfer> { [tranfer.to_stop_id] = tranfer };
+					AllTransfers.Add(tranfer.from_stop_id, temp);
+				}				
+			}
+        }
 
 		#endregion
 

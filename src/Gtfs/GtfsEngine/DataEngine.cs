@@ -76,6 +76,10 @@ namespace GtfsEngine
 						Gtfs.SetShapes(LoadData<Shapes>(entry.Open()));
 						break;
 
+					case "transfers.txt":
+						Gtfs.SetTransfer(LoadData<Transfer>(entry.Open()));
+						break;
+
 					default:
 						break;
 				}
