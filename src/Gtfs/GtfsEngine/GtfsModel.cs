@@ -163,6 +163,16 @@ namespace GtfsEngine
 			return temp.Keys.ToList();
 		}
 
+		/// <summary>
+		/// Retourne les jours ou le bus passe.
+		/// </summary>
+		/// <param name="idService"></param>
+		/// <returns></returns>
+		public Calendar GetCalendars(string idService)
+        {
+			return Calendars[idService];
+		}
+
 		#endregion
 
 		#region Set les Dico
@@ -194,6 +204,7 @@ namespace GtfsEngine
 				item.GetFkRoutes = GetRoute;
 				item.GetStopTimes = GetStopTimesByTripId;
 				item.GetFkShapes = GetShapes;
+				item.GetServices = GetCalendars;
 				AllTrips.Add(item.trip_id, item);
 			}
 		}

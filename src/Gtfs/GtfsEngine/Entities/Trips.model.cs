@@ -29,6 +29,11 @@ namespace GtfsEngine.Entities
 		public IEnumerable<Shapes> ShapesCollection { get { return GetFkShapes.Invoke(this.shape_id); } }
 		public Func<string, IEnumerable<Shapes>> GetFkShapes { get; set; }
 
+		/// <summary>
+		/// Retourne le service (Calendars) pour ce voyage.
+		/// </summary>
+		public Calendar GetCalendar { get { return GetServices.Invoke(this.service_id); } }
+		public Func<string, Calendar> GetServices { get; set; }
 
 		/// <summary>
 		/// Retourne le premier horaire de début de ce voyage.
