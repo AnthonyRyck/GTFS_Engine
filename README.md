@@ -8,7 +8,7 @@ La General Transit Feed Specification ([GTFS](https://developers.google.com/tran
 
 ### Utilisation
 Avec un fichier zip qui contient tous les fichiers `txt`, la librairie permet de charger tout en mémoire avec les relations comme indiquées :  
-<p align="center"><kbd><img src="https://i.ibb.co/FswTwhc/GTFS-db.png" height="450"></kbd></p>
+<p align="center"><kbd><img src="https://github.com/AnthonyRyck/GTFS_Engine/blob/main/Img/BDD-InMemory.png" height="450"></kbd></p>  
 
 ### Chargement  
 Fichier zip :
@@ -39,7 +39,7 @@ The General Transit Feed Specification ([GTFS](https://developers.google.com/tra
 
 ## Usage
 With a zip file that contains all the 'txt' files, the library allows you to load everything in memory with the relationships as indicated :
-<p align="center"><kbd><img src="https://i.ibb.co/FswTwhc/GTFS-db.png" height="450"></kbd></p>
+<p align="center"><kbd><img src="https://github.com/AnthonyRyck/GTFS_Engine/blob/main/Img/BDD-InMemory.png" height="450"></kbd></p>  
 
 ### Loading
 Zip file :
